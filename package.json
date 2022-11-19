@@ -1,0 +1,23 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "hexlet brain games",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Staffelhof/frontend-project-44.git"
+  },
+  "author": "Kozhanchikov Anton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Staffelhof/frontend-project-44/issues"
+  },
+  "homepage": "https://github.com/Staffelhof/frontend-project-44#readme",
+  "type": "module",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  }
+}
