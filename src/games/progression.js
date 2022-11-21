@@ -1,5 +1,5 @@
 import {
-  question, randomInt, checkAnswer,
+  randomInt, checkAnswer,
 } from '../index.js';
 
 const makeProgression = (start, length, step) => {
@@ -18,8 +18,7 @@ const progressionGame = (name) => {
   const progression = makeProgression(progressionStart, progressionLength, progressionStep);
   const correctAnswer = progression[hideNumber];
   progression[hideNumber] = '..';
-  const answer = question(progression.join(' '));
-  return checkAnswer(answer, correctAnswer.toString(), name);
+  return checkAnswer(progression.join(' '), correctAnswer.toString(), name);
 };
 
 export const rules = 'What number is missing in the progression?';

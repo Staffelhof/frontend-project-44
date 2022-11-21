@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import start from './cli.js';
 
 export const randomInt = (num) => Math.floor(Math.random() * num);
 
@@ -18,9 +19,12 @@ const wrongAnswerText = (answer, correctAnswer, name) => {
   return false;
 };
 
-export const checkAnswer = (answer, correctAnswer, name) => (answer === correctAnswer
-  ? correctAnswerText()
-  : wrongAnswerText(answer, correctAnswer, name));
+export const checkAnswer = (point, correctAnswer, name) => {
+  const answer = question(point);
+  return (answer === correctAnswer
+    ? correctAnswerText()
+    : wrongAnswerText(answer, correctAnswer, name));
+};
 
 const play = (name, game) => {
   let numberOfWins = 0;
@@ -34,7 +38,8 @@ const play = (name, game) => {
   return numberOfWins;
 };
 
-export const startGame = (name, game, gameRules) => {
+export const startGame = (game, gameRules) => {
+  const name = start();
   console.log(gameRules);
   const numberOfWins = play(name, game);
   if (numberOfWins === 3) {
