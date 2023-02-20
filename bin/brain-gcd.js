@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 import * as game from '../src/games/gcd.js';
-import { startGame } from '../src/index.js';
+import { initAndStartGameWithRules } from '../src/index.js';
 
-startGame(game.default, game.rules);
+initAndStartGameWithRules(game.default, game.rules);

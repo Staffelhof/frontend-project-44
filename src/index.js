@@ -1,32 +1,32 @@
 import readlineSync from 'readline-sync';
-import start from './cli.js';
+import getPlayerName from './cli.js';
 
 export const randomInt = (num) => Math.floor(Math.random() * num);
 
-export const question = (point) => {
+export const getAnswerForQuestion = (point) => {
   console.log(`Question: ${point}`);
   return readlineSync.question('Your answer: ');
 };
 
-const correctAnswerText = () => {
+const correctAnswerResponse = () => {
   console.log('Correct!');
   return true;
 };
 
-const wrongAnswerText = (answer, correctAnswer, name) => {
+const wrongAnswerResponse = (answer, correctAnswer, name) => {
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
   console.log(`Let's try again, ${name}!`);
   return false;
 };
 
 export const checkAnswer = (point, correctAnswer, name) => {
-  const answer = question(point);
+  const answer = getAnswerForQuestion(point);
   return (answer === correctAnswer
-    ? correctAnswerText()
-    : wrongAnswerText(answer, correctAnswer, name));
+    ? correctAnswerResponse()
+    : wrongAnswerResponse(answer, correctAnswer, name));
 };
 
-const play = (name, game) => {
+const playThreeRounds = (name, game) => {
   let numberOfWins = 0;
   for (let i = 0; i < 3; i += 1) {
     const result = game(name);
@@ -38,10 +38,10 @@ const play = (name, game) => {
   return numberOfWins;
 };
 
-export const startGame = (game, gameRules) => {
-  const name = start();
+export const initAndStartGameWithRules = (game, gameRules) => {
+  const name = getPlayerName();
   console.log(gameRules);
-  const numberOfWins = play(name, game);
+  const numberOfWins = playThreeRounds(name, game);
   if (numberOfWins === 3) {
     console.log(`Congratulations, ${name}!`);
   }
