@@ -1,6 +1,8 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Staffelhof/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Staffelhof/frontend-project-44/actions)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/60a4fe591d5c2e07ce8d/maintainability)](https://codeclimate.com/github/Staffelhof/frontend-project-44/maintainability)
+
 "Brain Games" is a set of five console games based on the popular mobile brain-pumping apps. Each game asks questions that need to be answered correctly. After three correct answers, the game is considered completed. Incorrect answers end the game and prompt you to play it again.
 
 Games:
@@ -21,11 +23,7 @@ Determining a prime number.
 
 [Prime game asciinema](https://asciinema.org/a/9CZkw3dKpMarWAFDNeGFUh1ii)
 
-Min specs:
-
-Node.js v18.12.0. with any supported OS.
-
 Installing instructions:
-- clone project with 'git clone <ssh/url>'
-- open a 'frontend-project-44' directory
-- throw 'make install' and 'npm link' in console.
+```shell
+git clone https://github.com/Staffelhof/frontend-project-44.git && cd frontend-project-44 && make install && npm link
+```
