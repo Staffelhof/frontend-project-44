@@ -1,19 +1,16 @@
-import {
-  randomInt, checkAnswer,
-} from '../index.js';
-
-const YES_ANSWER = 'yes';
-const NO_ANSWER = 'no';
+import { randomInt } from '../index.js';
 
 const isPrime = (num) => {
-  for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) if (num % i === 0) return false;
+  for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) {
+    if (num % i === 0) return false;
+  }
   return num > 1;
 };
 
-const primeGame = (name) => {
+const primeGame = () => {
   const number = randomInt(100);
-  const correctAnswer = isPrime(number) ? YES_ANSWER : NO_ANSWER;
-  return checkAnswer(number, correctAnswer, name);
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
+  return [number, correctAnswer];
 };
 
 export const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';

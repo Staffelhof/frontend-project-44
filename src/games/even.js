@@ -1,14 +1,9 @@
-import {
-  randomInt, checkAnswer,
-} from '../index.js';
+import { randomInt } from '../index.js';
 
-const YES_ANSWER = 'yes';
-const NO_ANSWER = 'no';
-
-const evenGame = (name) => {
+const evenGame = () => {
   const number = randomInt(100);
-  const correctAnswer = number % 2 === 0 ? YES_ANSWER : NO_ANSWER;
-  return checkAnswer(number, correctAnswer, name);
+  const correctAnswer = number % 2 === 0 ? 'yes' : 'no';
+  return [number, correctAnswer];
 };
 
 export const rules = 'Answer "yes" if the number is even, otherwise answer "no".';

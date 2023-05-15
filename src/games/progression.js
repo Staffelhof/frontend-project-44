@@ -1,6 +1,4 @@
-import {
-  randomInt, checkAnswer,
-} from '../index.js';
+import { randomInt } from '../index.js';
 
 const makeProgression = (start, length, step) => {
   const result = [start];
@@ -10,7 +8,7 @@ const makeProgression = (start, length, step) => {
   return result;
 };
 
-const progressionGame = (name) => {
+const progressionGame = () => {
   const progressionLength = randomInt(10) + 5;
   const progressionStep = randomInt(5) + 1;
   const progressionStart = randomInt(100);
@@ -18,7 +16,7 @@ const progressionGame = (name) => {
   const progression = makeProgression(progressionStart, progressionLength, progressionStep);
   const correctAnswer = progression[hideNumber];
   progression[hideNumber] = '..';
-  return checkAnswer(progression.join(' '), correctAnswer.toString(), name);
+  return [progression.join(' '), correctAnswer.toString()];
 };
 
 export const rules = 'What number is missing in the progression?';

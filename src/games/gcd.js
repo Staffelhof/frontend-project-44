@@ -1,6 +1,4 @@
-import {
-  randomInt, checkAnswer,
-} from '../index.js';
+import { randomInt } from '../index.js';
 
 const gcd = (a, b) => {
   if (!b) {
@@ -9,12 +7,12 @@ const gcd = (a, b) => {
   return gcd(b, a % b);
 };
 
-const gcdGame = (name) => {
+const gcdGame = () => {
   const firstNum = randomInt(100);
   const secondNum = randomInt(100);
-  const point = `${firstNum} ${secondNum}`;
+  const question = `${firstNum} ${secondNum}`;
   const correctAnswer = gcd(firstNum, secondNum);
-  return checkAnswer(point, correctAnswer.toString(), name);
+  return [question, correctAnswer.toString()];
 };
 
 export const rules = 'Find the greatest common divisor of given numbers.';

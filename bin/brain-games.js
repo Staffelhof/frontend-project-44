@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import getPlayerName from '../src/cli.js';
+import getPlayerName, { greetingMessage } from '../src/cli.js';
 
+greetingMessage();
 getPlayerName();

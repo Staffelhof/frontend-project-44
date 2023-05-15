@@ -1,8 +1,6 @@
-import {
-  checkAnswer, randomInt,
-} from '../index.js';
+import { randomInt } from '../index.js';
 
-const calcGame = (name) => {
+const calcGame = () => {
   const operationNumber = randomInt(3);
   const firstNumber = randomInt(100);
   const secondNumber = randomInt(100);
@@ -17,14 +15,16 @@ const calcGame = (name) => {
       correctAnswer = firstNumber - secondNumber;
       sign = '-';
       break;
-    default:
+    case 2:
       correctAnswer = firstNumber * secondNumber;
       sign = '*';
       break;
+    default:
+      console.log('Error while computing operation');
+      return;
   }
-  const point = `${firstNumber} ${sign} ${secondNumber}`;
-
-  return checkAnswer(point, correctAnswer.toString(), name);
+  const question = `${firstNumber} ${sign} ${secondNumber}`;
+  return [question, correctAnswer.toString()];
 };
 
 export const rules = 'What is the result of the expression?';
