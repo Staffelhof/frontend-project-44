@@ -21,7 +21,7 @@ const calcGame = () => {
       break;
     default:
       console.log('Error while computing operation');
-      return;
+      return [];
   }
   const question = `${firstNumber} ${sign} ${secondNumber}`;
   return [question, correctAnswer.toString()];
